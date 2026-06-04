@@ -1,0 +1,218 @@
+
+.work {
+  padding: 80px 44px 18px;
+}
+
+.s-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 64px;
+}
+
+.s-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.s-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(52px, 8vw, 110px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.88;
+  color: var(--fg);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pcard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition);
+  cursor: none;
+}
+
+.pcard:hover { border-color: var(--border-hover); }
+
+.pcard-inner { display: flex; min-height: 260px; }
+
+.pcard-info {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pcard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.pnum {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.pcard-mid { margin-bottom: 32px; }
+
+.pcompany {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.pname {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--fg);
+  margin-bottom: 8px;
+}
+
+.pyear { font-size: 13px; color: var(--muted); }
+
+.pmetrics { display: flex; gap: 32px; flex-wrap: wrap; }
+
+.pmetric { display: flex; flex-direction: column; gap: 4px; }
+
+.pm-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.pm-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+.pcard-vis {
+  position: relative;
+  width: 40%;
+  min-width: 280px;
+  background: var(--bg2);
+  overflow: hidden;
+}
+
+.pcard-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(196, 123, 228, 0.08) 0%, transparent 60%);
+}
+
+.p-arrow {
+  position: absolute;
+  top: 24px; right: 24px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.pcard:hover .p-arrow {
+  transform: translate(4px, -4px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.pcard-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.pcard-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg2) 0%, transparent 50%);
+}
+
+.wip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.wip-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent2);
+  animation: pulse 2s ease infinite;
+}
+
+.pdf-strip {
+  margin-top: 48px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+  text-decoration: none;
+  transition: border-color var(--transition), background var(--transition);
+  flex-shrink: 0;
+}
+
+.cv-btn:hover {
+  border-color: var(--border-hover);
+  background: var(--bg2);
+}
+
+@media (max-width: 900px) {
+  .work { padding: 60px 24px 18px; }
+  .pcard-inner { flex-direction: column; }
+  .pcard-vis { width: 100%; min-height: 200px; }
+}

@@ -1,0 +1,136 @@
+
+.contact {
+  padding: 120px 44px 80px;
+}
+
+.contact .s-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.contact-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(52px, 8vw, 110px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.88;
+  color: var(--fg);
+  margin-bottom: 80px;
+}
+
+.contact-headline .tl {
+  overflow: hidden;
+  display: block;
+}
+
+.contact-headline .tl:first-child span {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-headline .tl:first-child span::before,
+.contact-headline .tl:first-child span::after,
+.contact-headline .tl:first-child span .strike-1,
+.contact-headline .tl:first-child span .strike-2,
+.contact-headline .tl:first-child span .strike-3,
+.contact-headline .tl:first-child span .strike-4,
+.contact-headline .tl:first-child span .strike-5 {
+  display: none;
+}
+
+.contact-headline a {
+  color: var(--fg);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.contact-headline a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.contact-headline a:hover { color: var(--accent); }
+.contact-headline a:hover::after { width: 100%; }
+
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 36px;
+}
+
+.cf-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cf-email-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cf-email-row p { font-size: 15px; color: var(--fg); }
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 2px;
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.cf-email-row:hover .copy-btn { opacity: 1; }
+.copy-btn:hover { color: var(--fg); }
+
+.cf-left > p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cf-right { display: flex; gap: 24px; }
+
+.cf-right a {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cf-right a:hover { color: var(--fg); }
+
+.copy {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 32px;
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .contact { padding: 80px 24px 60px; }
+  .contact-headline { margin-bottom: 48px; }
+  .contact-footer {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+}
