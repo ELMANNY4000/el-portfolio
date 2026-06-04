@@ -9,6 +9,9 @@
   justify-content: space-between;
   align-items: center;
   background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
   transition: padding 0.45s cubic-bezier(0.4, 0, 0.2, 1),
               top 0.45s cubic-bezier(0.4, 0, 0.2, 1),
               left 0.45s cubic-bezier(0.4, 0, 0.2, 1),
@@ -38,6 +41,7 @@
   font-weight: 800;
   color: #C47BE4;
   text-decoration: none;
+  line-height: normal;
 }
 
 .nav-right {
