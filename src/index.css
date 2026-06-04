@@ -38,9 +38,27 @@ body {
   transition: background var(--transition), color var(--transition);
 }
 
-@media (pointer: fine) { body { cursor: none; } }
-@media (pointer: coarse) { body { cursor: auto; } }
+/* Desktop: hide native cursor, show custom dot */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, [role="button"], input, textarea, select, label {
+    cursor: none;
+  }
+}
 
+/* Mobile: normal native cursor */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  
+  a, button, [role="button"], input, textarea, select, label {
+    cursor: auto;
+  }
+}
 a:focus-visible, button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
