@@ -1,4 +1,3 @@
-
 .navbar {
   position: fixed;
   top: 0;
@@ -9,10 +8,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--nav-bg);
-  backdrop-filter: var(--nav-backdrop);
-  -webkit-backdrop-filter: var(--nav-backdrop);
-  border-bottom: 1px solid var(--border);
+  background: transparent;
+  transition: padding 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              top 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              left 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              right 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              border-radius 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.4s ease,
+              backdrop-filter 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.navbar.scrolled {
+  top: 16px;
+  left: 22%;
+  right: 22%;
+  gap: 48px;
+  padding: 14px 36px;
+  border-radius: 100px;
+  background: rgba(12, 12, 11, 0.80);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
 }
 
 .nav-logo {
@@ -23,13 +40,18 @@
   text-decoration: none;
 }
 
-.nav-right { display: flex; align-items: center; gap: 32px; }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 28px;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -45,14 +67,21 @@
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
   background: #C47BE4;
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover { color: #C47BE4; }
-.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover {
+  color: #C47BE4;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
 
 .theme-btn {
   display: flex;
@@ -75,8 +104,20 @@
   background: var(--bg2);
 }
 
-.t-icon { font-size: 14px; line-height: 1; }
+.t-icon {
+  font-size: 14px;
+  line-height: 1;
+}
 
 @media (max-width: 900px) {
-  .navbar { padding: 18px 24px; }
+  .navbar {
+    padding: 18px 24px;
+  }
+
+  .navbar.scrolled {
+    top: 12px;
+    left: 16px;
+    right: 16px;
+    padding: 12px 20px;
+  }
 }
