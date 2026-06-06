@@ -38,25 +38,17 @@ body {
   transition: background var(--transition), color var(--transition);
 }
 
-/* Desktop: hide native cursor, show custom dot */
+/* Desktop: hide native cursor, show custom */
 @media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-  
-  a, button, [role="button"], input, textarea, select, label {
-    cursor: none;
+  * {
+    cursor: none !important;
   }
 }
 
 /* Mobile: normal native cursor */
 @media (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
-  
-  a, button, [role="button"], input, textarea, select, label {
-    cursor: auto;
+  * {
+    cursor: auto !important;
   }
 }
 a:focus-visible, button:focus-visible {

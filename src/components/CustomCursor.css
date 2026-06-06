@@ -2,30 +2,34 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   pointer-events: none;
   z-index: 10000;
-  transition: transform 0.08s ease-out;
+  transition: transform 0.08s ease-out, width 0.2s ease, height 0.2s ease;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: -4px;
+  margin-top: -4px;
 }
 
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+.cursor-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--fg);
+  transition: color 0.2s ease, filter 0.2s ease;
 }
 
-/* Optional: expand on clickable elements */
-.custom-cursor.hovering .cursor-dot {
+/* Hover state - slightly larger and accent color */
+.custom-cursor.hovering {
   width: 40px;
   height: 40px;
-  background: rgba(196, 123, 228, 0.15);
-  border: 1px solid var(--accent);
+}
+
+.custom-cursor.hovering .cursor-svg {
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px rgba(196, 123, 228, 0.6));
 }
 
 /* Hide on touch devices */

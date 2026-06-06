@@ -23,7 +23,7 @@ const Work = () => {
                 </span>
               </div>
               <div className="pcard-mid">
-                <p className="pcompany">NeoTaste / 2025 - 2026</p>
+                <p className="pcompany">Mave&Co. / 2026</p>
                 <h3 className="pname">Finding the right incentive to double referral volume</h3>
                 <div className="tags">
                   <span className="tag">Growth</span>
