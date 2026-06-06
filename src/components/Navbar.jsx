@@ -1,19 +1,32 @@
-import React from 'react';
-import './Navbar.css';
+import React from "react";
+import "./Navbar.css";
 
 const Navbar = ({ scrolled, theme, onToggleTheme }) => {
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <a href="#hero" className="nav-logo">Emmanuel</a>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <a href="#hero" className="nav-logo">
+        Emmanuel
+      </a>
       <div className="nav-right">
         <ul className="nav-links">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#work">Work</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
-        <button className="theme-btn" onClick={onToggleTheme} aria-label="Toggle colour scheme">
-          <span className="t-icon">{theme === 'dark' ? '◐' : '◑'}</span>
-          <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
+        <button
+          className="theme-btn"
+          onClick={onToggleTheme}
+          aria-label="Toggle colour scheme"
+        >
+          <span className="t-icon">{theme === "dark" ? "◐" : "◑"}</span>
+          // AFTER (shows current mode):
+          <span>{theme === "dark" ? "Dark" : "Light"}</span>
         </button>
       </div>
     </nav>
