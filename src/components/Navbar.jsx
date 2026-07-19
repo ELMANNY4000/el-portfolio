@@ -14,6 +14,14 @@ const Navbar = ({ scrolled, theme, onToggleTheme }) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#hero" className="nav-logo">Emmanuel</a>
       <div className="nav-right">
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          {navItems.map(item => (
+            <li key={item.href}>
+              <a href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+
         <button className="theme-btn" onClick={onToggleTheme} aria-label="Toggle colour scheme">
           <span className="t-icon">{theme === 'dark' ? '◐' : '◑'}</span>
           <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
@@ -30,14 +38,6 @@ const Navbar = ({ scrolled, theme, onToggleTheme }) => {
           <span></span>
           <span></span>
         </button>
-
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          {navItems.map(item => (
-            <li key={item.href}>
-              <a href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
       </div>
     </nav>
   );
