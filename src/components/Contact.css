@@ -64,6 +64,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
   padding-top: 36px;
 }
 
@@ -71,31 +73,69 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
 }
 
 .cf-email-row {
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
 
-.cf-email-row p { font-size: 15px; color: var(--fg); }
+.cf-email-row p {
+  font-size: 15px;
+  color: var(--fg);
+  word-break: break-all;
+}
 
 .copy-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
   background: none;
   border: none;
+  border-radius: 6px;
   padding: 2px;
   color: var(--muted);
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.15s ease;
 }
 
 .cf-email-row:hover .copy-btn { opacity: 1; }
-.copy-btn:hover { color: var(--fg); }
+.copy-btn:hover { color: var(--fg); background: var(--bg2); }
+.copy-btn:active { transform: scale(0.88); }
+.copy-btn.copied { opacity: 1; color: var(--accent); }
+
+/* Hover can't reveal anything on touch screens, so keep the button visible
+   there permanently rather than hiding a control mobile users could never
+   trigger. */
+@media (hover: none) {
+  .copy-btn { opacity: 1; }
+}
+
+.copy-toast {
+  position: absolute;
+  left: calc(100% + 34px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
 
 .cf-left > p {
   font-size: 13px;
@@ -103,7 +143,7 @@
   line-height: 1.7;
 }
 
-.cf-right { display: flex; gap: 24px; }
+.cf-right { display: flex; flex-wrap: wrap; gap: 24px; }
 
 .cf-right a {
   font-size: 11px;
@@ -130,7 +170,25 @@
   .contact-headline { margin-bottom: 48px; }
   .contact-footer {
     flex-direction: column;
+    align-items: flex-start;
     gap: 32px;
     margin-bottom: 48px;
   }
+  .cf-right { gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .contact { padding: 64px 20px 48px; }
+  .contact-headline { margin-bottom: 40px; }
+  .cf-email-row p { font-size: 14px; }
+  .copy-toast {
+    /* Not enough room to float the toast sideways on a narrow screen —
+       drop it under the email row instead. */
+    left: 0;
+    top: calc(100% + 6px);
+    transform: translateY(-4px);
+  }
+  .copy-toast.show { transform: translateY(0); }
+  .cf-right { gap: 16px 20px; }
+  .copy { margin-top: 24px; padding-top: 24px; }
 }

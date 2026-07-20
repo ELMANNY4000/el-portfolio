@@ -36,7 +36,7 @@ const About = () => {
             <ul className="exp-list">
               <li className="exp-item">
                 <div className="ei-l">
-                  <span className="ei-co">MAVE&CO.</span>
+                  <span className="ei-co">SAINT CLUB</span>
                   <span className="ei-role">Full-stack Developer</span>
                 </div>
                 <span className="ei-yr">2026 - Now</span>
