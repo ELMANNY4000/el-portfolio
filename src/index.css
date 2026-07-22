@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@800&display=swap');
+
+:root {
+  --bg: #050505;
+  --bg2: #141413;
+  --fg: #EDEDE8;
+  --muted: #93938F;
+  --border: rgba(237, 237, 232, 0.09);
+  --border-hover: rgba(237, 237, 232, 0.38);
+  --accent: #C47BE4;
+  --accent2: #FF7A5C;
+  --radius: 14px;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --nav-bg: transparent;
+  --nav-backdrop: none;
+  --nav-scrolled-bg: rgba(12, 12, 11, 0.80);
+}
+
+[data-theme="light"] {
+  --bg: #F5F5F0;
+  --bg2: #EAEAE5;
+  --fg: #1A1A18;
+  --muted: #6B6B67;
+  --border: rgba(26, 26, 24, 0.09);
+  --border-hover: rgba(26, 26, 24, 0.38);
+  --nav-bg: rgba(245, 245, 240, 0.80);
+  --nav-backdrop: blur(20px);
+  --nav-scrolled-bg: rgba(245, 245, 240, 0.80);
+}
+
+/* Theme-toggle circular reveal (driven from App.jsx via startViewTransition).
+   Kill the browser's default cross-fade so only our clip-path circle shows. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Desktop: hide native cursor, show custom */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Mobile: normal native cursor */
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+}
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes shline {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes pathRect {
+  25% { stroke-dashoffset: 64; }
+  50% { stroke-dashoffset: 128; }
+  75% { stroke-dashoffset: 192; }
+  100% { stroke-dashoffset: 256; }
+}
+
+@keyframes pathCircle {
+  25% { stroke-dashoffset: 125; }
+  50% { stroke-dashoffset: 175; }
+  75% { stroke-dashoffset: 225; }
+  100% { stroke-dashoffset: 275; }
+}
+
+@keyframes pathTriangle {
+  33% { stroke-dashoffset: 74; }
+  66% { stroke-dashoffset: 147; }
+  100% { stroke-dashoffset: 221; }
+}

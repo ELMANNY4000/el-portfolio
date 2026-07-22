@@ -1,0 +1,40 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.08s ease-out, width 0.2s ease, height 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+.cursor-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--fg);
+  transition: color 0.2s ease, filter 0.2s ease;
+}
+
+/* Hover state - slightly larger and accent color */
+.custom-cursor.hovering {
+  width: 40px;
+  height: 40px;
+}
+
+.custom-cursor.hovering .cursor-svg {
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px rgba(196, 123, 228, 0.6));
+}
+
+/* Hide on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
