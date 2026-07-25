@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    const timer = setTimeout(() => setLoading(false), 5000);
+    const timer = setTimeout(() => setLoading(false), 1500);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(timer);
