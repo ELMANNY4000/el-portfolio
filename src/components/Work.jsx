@@ -61,8 +61,6 @@ const Work = () => {
           </div>
         </a>
 
-        </a>
-
         {/* Calmix */}
         <div className="pcard pcard--inactive" aria-label="Calmix — coming soon">
           <div className="pcard-inner">
