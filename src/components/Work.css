@@ -219,3 +219,49 @@
   .pcard-inner { flex-direction: column; }
   .pcard-vis { width: 100%; min-height: 200px; }
 }
+
+/* On hold badge */
+.onhold-badge {
+  border-color: rgba(255, 122, 92, 0.25);
+  color: var(--accent2);
+}
+
+.onhold-dot {
+  background: var(--accent2) !important;
+  animation: none !important;
+}
+
+/* Calmix card — not a link, slightly muted */
+.pcard--inactive {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.pcard--inactive:hover { border-color: var(--border); }
+
+.pcard-vis--calmix {
+  background: #0a0a0f;
+}
+
+.pcard-bg--calmix {
+  background: radial-gradient(ellipse at 60% 40%, rgba(196, 123, 228, 0.12) 0%, transparent 65%),
+              radial-gradient(ellipse at 30% 70%, rgba(255, 122, 92, 0.06) 0%, transparent 55%);
+}
+
+.calmix-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.calmix-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.6;
+}
