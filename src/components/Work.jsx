@@ -12,13 +12,7 @@ const Work = () => {
       </div>
 
       <div className="projects">
-        <a
-          href="https://saint-club.vercel.app/"
-          target="_blank"
-          rel="noopener"
-          className="pcard"
-          aria-label="View the Saint Club live site"
-        >
+        <div className="pcard">
           <div className="pcard-inner">
             <div className="pcard-info">
               <div className="pcard-top" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
@@ -52,14 +46,21 @@ const Work = () => {
               <div className="pcard-bg"></div>
               <img className="pcard-img" src="/images/saintclub-case.webp" alt="Saint Club streetwear e-commerce homepage cover" />
               <div className="pcard-img-overlay"></div>
-              <div className="p-arrow">
+              <a
+                href="https://saint-club.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                className="p-arrow"
+                aria-label="Visit Saint Club live site"
+                onClick={e => e.stopPropagation()}
+              >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 12L12 2M12 2H4M12 2V10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </div>
+              </a>
             </div>
           </div>
-        </a>
+        </div>
 
         {/* Calmix */}
         <div className="pcard pcard--inactive" aria-label="Calmix — coming soon">
